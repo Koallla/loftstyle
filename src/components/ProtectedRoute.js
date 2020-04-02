@@ -1,11 +1,11 @@
-import React from "react";
-import { Route, Redirect } from "react-router-dom";
-import { connect } from "react-redux";
-import * as sessionSelectors from "../redux/session/sessionSelectors";
+import React from 'react';
+import { Route, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
+import * as sessionSelectors from '../redux/session/sessionSelectors';
 
 const ProtectedRoute = ({
   authenticated,
-  redirectTo = "/",
+  redirectTo = '/',
   component: Component,
   ...rest
 }) => (
@@ -18,7 +18,7 @@ const ProtectedRoute = ({
         <Redirect
           to={{
             pathname: redirectTo,
-            state: { from: props.location }
+            state: { from: props.location },
           }}
         />
       )
@@ -27,7 +27,7 @@ const ProtectedRoute = ({
 );
 
 const mapStateToProps = state => ({
-  authenticated: sessionSelectors.getIsAuthenticated(state)
+  authenticated: sessionSelectors.getIsAuthenticated(state),
 });
 
 export default connect(mapStateToProps)(ProtectedRoute);

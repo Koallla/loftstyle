@@ -21,9 +21,9 @@
 
 // export default withAuthRedirect(SignUpPage);
 
-import React, { Component } from "react";
-import withAuthRedirect from "../components/hoc/withAuthRedirect";
-import SignUpForm from "../components/SignUpForm";
+import React, { Component } from 'react';
+import withAuthRedirect from '../components/hoc/withAuthRedirect';
+import SignUpForm from '../components/SignUpForm/SignUpForm';
 
 class SignUp extends Component {
   render() {
