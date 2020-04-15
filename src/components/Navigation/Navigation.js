@@ -1,99 +1,109 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './navigation.module.css';
+import { Elastic } from 'react-burgers';
 
 const color = 'black';
 const decor = 'underline';
 
-const Navigation = () => {
-  return (
-    <>
-      {/* <StyledList> */}
-      <a href="/">
-        <div className={styles.logo}></div>
-      </a>
-      {/* <StyledItem> */}
-      <NavLink
-        exact
-        activeStyle={{
-          fontWeight: 'bold',
-          color: `${color}`,
-          textDecoration: `${decor}`,
-        }}
-        to="/"
-      >
-        Home
-      </NavLink>
-      {/* </StyledItem> */}
+export default class Navigation extends Component {
+  state = {
+    isOpen: false,
+  };
 
-      {/* <StyledItem> */}
-      <NavLink
-        activeStyle={{
-          fontWeight: 'bold',
-          color: `${color}`,
-          textDecoration: `${decor}`,
-        }}
-        to="/about"
-      >
-        About us
-      </NavLink>
-      {/* </StyledItem> */}
+  handleToggle = () => {
+    this.setState(state => ({
+      isOpen: !state.isOpen,
+    }));
+  };
 
-      {/* <StyledItem> */}
-      <NavLink
-        activeStyle={{
-          fontWeight: 'bold',
-          color: `${color}`,
-          textDecoration: `${decor}`,
-        }}
-        to="/gallery"
-      >
-        Gallery
-      </NavLink>
-      {/* </StyledItem> */}
+  render() {
+    const { isOpen } = this.state;
+    return (
+      <>
+        <a href="/">
+          <div className={styles.logo}></div>
+        </a>
 
-      {/* <StyledItem> */}
-      <NavLink
-        activeStyle={{
-          fontWeight: 'bold',
-          color: `${color}`,
-          textDecoration: `${decor}`,
-        }}
-        to="/account"
-      >
-        Account
-      </NavLink>
-      {/* </StyledItem> */}
+        {isOpen && (
+          <>
+            <NavLink
+              exact
+              activeStyle={{
+                fontWeight: 'bold',
+                color: `${color}`,
+                textDecoration: `${decor}`,
+              }}
+              to="/"
+            >
+              Home
+            </NavLink>
 
-      {/* <StyledItem> */}
-      <NavLink
-        exact
-        activeStyle={{
-          fontWeight: 'bold',
-          color: `${color}`,
-          textDecoration: `${decor}`,
-        }}
-        to="/login"
-      >
-        Login
-      </NavLink>
-      {/* </StyledItem> */}
+            <NavLink
+              activeStyle={{
+                fontWeight: 'bold',
+                color: `${color}`,
+                textDecoration: `${decor}`,
+              }}
+              to="/about"
+            >
+              About us
+            </NavLink>
 
-      {/* {<StyledItemwhite */}
-      <NavLink
-        activeStyle={{
-          fontWeight: 'bold',
-          color: `${color}`,
-          textDecoration: `${decor}`,
-        }}
-        to="/signup"
-      >
-        SignUp
-      </NavLink>
-      {/* </StyledItem> */}
-      {/* </StyledList> */}
-    </>
-  );
-};
+            <NavLink
+              activeStyle={{
+                fontWeight: 'bold',
+                color: `${color}`,
+                textDecoration: `${decor}`,
+              }}
+              to="/gallery"
+            >
+              Gallery
+            </NavLink>
+            <NavLink
+              activeStyle={{
+                fontWeight: 'bold',
+                color: `${color}`,
+                textDecoration: `${decor}`,
+              }}
+              to="/account"
+            >
+              Account
+            </NavLink>
 
-export default Navigation;
+            <NavLink
+              exact
+              activeStyle={{
+                fontWeight: 'bold',
+                color: `${color}`,
+                textDecoration: `${decor}`,
+              }}
+              to="/login"
+            >
+              Login
+            </NavLink>
+
+            <NavLink
+              activeStyle={{
+                fontWeight: 'bold',
+                color: `${color}`,
+                textDecoration: `${decor}`,
+              }}
+              to="/signup"
+            >
+              SignUp
+            </NavLink>
+          </>
+        )}
+
+        <Elastic
+          className={styles.Burger}
+          active={isOpen}
+          onClick={this.handleToggle}
+        />
+      </>
+    );
+  }
+}
+
+// export default Navigation;
