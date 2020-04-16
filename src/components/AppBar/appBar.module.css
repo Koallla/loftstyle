@@ -1,10 +1,13 @@
 .container {
+  width: 90%;
+  margin: 0 auto;
   display: flex;
   justify-content: space-around;
   align-items: center;
   padding: 20px;
-  background-color: rgba(63, 20, 20, 0.568);
-  font-size: 15px;
+  /* background-color: rgba(63, 20, 20, 0.568); */
+  border-bottom: 3px solid rgb(68, 67, 67);
+  font-size: 25px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   text-transform: uppercase;
 }
@@ -20,15 +23,16 @@
     flex-direction: column;
     align-items: center;
     padding: 10px;
-    background-color: rgba(63, 20, 20, 0.568);
-    font-size: 15px;
+    /* background-color: rgba(63, 20, 20, 0.568); */
+    font-size: 25px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-transform: uppercase;
   }
 }
 
-@media (min-width: 701px) {
+@media (min-width: 670px) and (max-width: 800px) {
   .container {
     justify-content: space-between;
+    font-size: 15px;
   }
 }
