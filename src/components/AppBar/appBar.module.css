@@ -2,7 +2,7 @@
   width: 90%;
   margin: 0 auto;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   padding: 20px;
   /* background-color: rgba(63, 20, 20, 0.568); */
@@ -32,7 +32,6 @@
 
 @media (min-width: 670px) and (max-width: 800px) {
   .container {
-    justify-content: space-between;
     font-size: 15px;
   }
 }
