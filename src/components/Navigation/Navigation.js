@@ -45,9 +45,9 @@ export default class Navigation extends Component {
                 color: `${color}`,
                 textDecoration: `${decor}`,
               }}
-              to="/about"
+              to="/gallery"
             >
-              About us
+              Gallery
             </NavLink>
 
             <NavLink
@@ -56,11 +56,11 @@ export default class Navigation extends Component {
                 color: `${color}`,
                 textDecoration: `${decor}`,
               }}
-              to="/gallery"
+              to="/about"
             >
-              Gallery
+              About us
             </NavLink>
-            <NavLink
+            {/* <NavLink
               activeStyle={{
                 fontWeight: 'bold',
                 color: `${color}`,
@@ -92,7 +92,7 @@ export default class Navigation extends Component {
               to="/signup"
             >
               SignUp
-            </NavLink>
+            </NavLink> */}
           </>
         )}
 
