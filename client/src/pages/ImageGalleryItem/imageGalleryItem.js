@@ -7,9 +7,9 @@ const ImageGalleryItem = ({ images }) => {
   return (
     images.length > 0 &&
     images.map(el => (
-      <li src={el.preview} key={el.id} className={styles.imageGalleryItem}>
+      <li src={el.original} key={el.id} className={styles.imageGalleryItem}>
         <ReactImageAppear
-          src={el.original}
+          src={el.preview}
           animation="zoomIn"
           alt={el.description}
           className={styles.imageGalleryItemImage}

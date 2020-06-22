@@ -11,9 +11,10 @@
     "react-dom": "^16.8.6",
     "react-image-appear": "^1.2.23",
     "react-loader-spinner": "^3.1.14",
+    "react-photo-gallery": "^8.0.0",
     "react-router-dom": "^5.0.1",
     "react-scripts": "^3.4.0",
-    "styled-components": "^4.3.2"
+    "styled-components": "^4.4.1"
   },
   "scripts": {
     "start": "react-scripts start",

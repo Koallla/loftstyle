@@ -1,13 +1,12 @@
 .container {
-  max-width: 1170px;
+  /* max-width: 1170px; */
+  min-width: 420px;
   margin: 0 auto;
-  height: auto;
-  min-width: 320px;
 
+  height: auto;
   background-image: url('https://cdn.trendir.com/wp-content/uploads/old/archives/2015/12/07/1-kitchen-design-lofts-3-urban-ideas-snaidero.jpg');
-  /* background-size: cover; */
-  background-size: contain;
-  background-size: 1170px auto;
+  background-position: center;
+  background-size: cover;
 }
 
 .wrapper {

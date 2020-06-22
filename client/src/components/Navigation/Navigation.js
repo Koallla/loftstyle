@@ -3,12 +3,13 @@ import { NavLink } from 'react-router-dom';
 import styles from './navigation.module.css';
 import { Elastic } from 'react-burgers';
 
-const color = 'black';
+const color = '#948037';
 const decor = 'underline';
 
 export default class Navigation extends Component {
   state = {
     isOpen: false,
+    isRenderBurger: true,
   };
 
   handleToggle = () => {
@@ -18,49 +19,50 @@ export default class Navigation extends Component {
   };
 
   render() {
-    const { isOpen } = this.state;
+    const { isOpen, isRenderBurger } = this.state;
     return (
-      <>
+      <div className={styles.container}>
         <a href="/">
-          <div className={styles.logo}></div>
+          <div className={styles.logo}>Loft-design</div>
         </a>
 
-        {isOpen && (
-          <>
-            <NavLink
-              exact
-              activeStyle={{
-                fontWeight: 'bold',
-                color: `${color}`,
-                textDecoration: `${decor}`,
-              }}
-              to="/"
-            >
-              Home
-            </NavLink>
+        <div className={styles.container_navPage}>
+          {isOpen && (
+            <div className={styles.navPage}>
+              <NavLink
+                exact
+                activeStyle={{
+                  fontWeight: 'bold',
+                  color: `${color}`,
+                  textDecoration: `${decor}`,
+                }}
+                to="/"
+              >
+                Home
+              </NavLink>
 
-            <NavLink
-              activeStyle={{
-                fontWeight: 'bold',
-                color: `${color}`,
-                textDecoration: `${decor}`,
-              }}
-              to="/gallery"
-            >
-              Gallery
-            </NavLink>
+              <NavLink
+                activeStyle={{
+                  fontWeight: 'bold',
+                  color: `${color}`,
+                  textDecoration: `${decor}`,
+                }}
+                to="/gallery"
+              >
+                Gallery
+              </NavLink>
 
-            <NavLink
-              activeStyle={{
-                fontWeight: 'bold',
-                color: `${color}`,
-                textDecoration: `${decor}`,
-              }}
-              to="/about"
-            >
-              About us
-            </NavLink>
-            {/* <NavLink
+              <NavLink
+                activeStyle={{
+                  fontWeight: 'bold',
+                  color: `${color}`,
+                  textDecoration: `${decor}`,
+                }}
+                to="/about"
+              >
+                About us
+              </NavLink>
+              {/* <NavLink
               activeStyle={{
                 fontWeight: 'bold',
                 color: `${color}`,
@@ -93,15 +95,19 @@ export default class Navigation extends Component {
             >
               SignUp
             </NavLink> */}
-          </>
-        )}
+            </div>
+          )}
 
-        <Elastic
-          className={styles.Burger}
-          active={isOpen}
-          onClick={this.handleToggle}
-        />
-      </>
+          {isRenderBurger && (
+            <Elastic
+              className={styles.Burger}
+              active={isOpen}
+              onClick={this.handleToggle}
+              color={'#ddd'}
+            />
+          )}
+        </div>
+      </div>
     );
   }
 }

@@ -1,12 +1,14 @@
 .container {
-  width: 90%;
   margin: 0 auto;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  /* background-color: rgba(63, 20, 20, 0.568); */
-  border-bottom: 3px solid rgb(68, 67, 67);
+  padding: 10px;
+  background-color: rgb(26, 26, 26);
+  border-bottom: 3px solid #948037;
   font-size: 25px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   text-transform: uppercase;

@@ -1,11 +1,11 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const StyledButton = styled.button`
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-  width: calc(90% + 12px);
+  min-width: calc(10% + 12px);
   color: #fff;
   background-color: #3f51b5;
   border: 0;
@@ -17,6 +17,7 @@ const StyledButton = styled.button`
   font: inherit;
   text-transform: uppercase;
   user-select: none;
+  font-weight: 700;
 
   transition: background-color 200ms ease-in-out;
 
@@ -26,7 +27,7 @@ const StyledButton = styled.button`
   }
 `;
 
-const Button = ({ type = "button", label = "", onClick = () => null }) => (
+const Button = ({ type = 'button', label = '', onClick = () => null }) => (
   <StyledButton type={type} onClick={onClick}>
     {label}
   </StyledButton>

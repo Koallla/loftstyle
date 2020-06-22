@@ -1,13 +1,16 @@
 .imageGallery {
   display: grid;
-  max-width: calc(100vw - 48px);
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  grid-gap: 16px;
+  max-width: calc(100vw - 50px);
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  grid-column-gap: 15px;
+  row-gap: 15px;
   margin-top: 0;
   margin-bottom: 0;
-  padding: 16px;
+  padding-left: 0;
+  margin-left: 0;
+  margin-right: 0;
+  text-align: center;
   list-style: none;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: rgb(131, 131, 131);
+  padding-inline-start: 0;
+  /* background-color: rgba(0, 0, 0, 0.158); */
 }

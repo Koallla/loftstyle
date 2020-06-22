@@ -12,7 +12,8 @@
 }
 
 .modal {
-  max-width: 900px;
-  width: 100%;
+  max-width: 85vh;
+  /* width: 100%; */
   background-color: rgba(255, 255, 255, 0.198);
+  margin: 0 auto;
 }

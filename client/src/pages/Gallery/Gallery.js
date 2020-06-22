@@ -2,15 +2,23 @@ import React, { Component } from 'react';
 import { alert } from '@pnotify/core';
 import API from '../../components/API/API';
 import Modal from '../Modal/modal';
-
-import styles from './gallery.modal.css';
+// import styles from './Gallery.modal.css';
 import ImageGallery from '../ImageGallery/ImageGallery';
-// import Button from '../Button/Button';
+import styled from 'styled-components';
+import Button from '../../components/shared/Button';
 import Loader from '../Loader/loader';
+
+const StyledMain = styled.main`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 110px;
+`;
 
 // import withAuthRedirect from "../components/hoc/withAuthRedirect";
 
-class Gallery extends Component {
+class GalleryPhoto extends Component {
   state = {
     images: [],
     isLoading: false,
@@ -54,16 +62,18 @@ class Gallery extends Component {
     const { images, isLoading, isModalOpen, imgModal } = this.state;
 
     return (
-      <div className={styles.container}>
+      <StyledMain>
         <ImageGallery images={images} isOpenModal={this.openModal} />
-        {/* {images.length !== 0 && <Button loadNextPage={this.onLoadNextPage} />} */}
+        {images.length !== 0 && (
+          <Button label={'Load more'} loadNextPage={this.onLoadNextPage} />
+        )}
         {isLoading && <Loader />}
         {isModalOpen && (
           <Modal onClose={this.closeModal} srcForModal={imgModal} />
         )}
-      </div>
+      </StyledMain>
     );
   }
 }
 
-export default Gallery;
+export default GalleryPhoto;
